@@ -6,7 +6,9 @@ part of 'nav_history.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-NavHistory _$NavHistoryFromJson(Map<String, dynamic> json) => NavHistory(
+MutualFundNavHistory _$MutualFundNavHistoryFromJson(
+  Map<String, dynamic> json,
+) => MutualFundNavHistory(
   meta: json['meta'] == null
       ? null
       : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -15,11 +17,12 @@ NavHistory _$NavHistoryFromJson(Map<String, dynamic> json) => NavHistory(
       .toList(),
 );
 
-Map<String, dynamic> _$NavHistoryToJson(NavHistory instance) =>
-    <String, dynamic>{
-      'meta': instance.meta?.toJson(),
-      'data': instance.data?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$MutualFundNavHistoryToJson(
+  MutualFundNavHistory instance,
+) => <String, dynamic>{
+  'meta': instance.meta?.toJson(),
+  'data': instance.data?.map((e) => e.toJson()).toList(),
+};
 
 Meta _$MetaFromJson(Map<String, dynamic> json) => Meta(
   fundHouse: json['fund_house'] as String?,

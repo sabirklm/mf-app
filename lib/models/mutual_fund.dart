@@ -15,9 +15,9 @@ class MutualFund {
   final int? schemeCode;
   final String? schemeName;
   @JsonKey(name: "isinGrowth")
-  final bool? isInGrowth;
+  final String? isInGrowth;
   @JsonKey(name: "isinDivReinvestment")
-  final bool? isInDivReinvestment;
+  final String? isInDivReinvestment;
 
   MutualFund({
     required this.schemeCode,

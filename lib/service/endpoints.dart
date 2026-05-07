@@ -1,5 +1,5 @@
-const baseAPI = "https://api.mfapi.in/mf";
+const baseAPI = "https://api.mfapi.in";
 
 const getMf = "$baseAPI/mf";
 
-const getNavHistory = "$baseAPI/mf/";
+const navHistory = "$baseAPI/mf";

@@ -1,6 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mf_ip/models/mutual_fund.dart';
 
 import '../views/screens/screens.dart';
+
+kPrint(Object data) {
+  if (kDebugMode) {
+    print(data);
+  }
+}
 
 final GoRouter routerConfig = GoRouter(
   initialLocation: '/',
@@ -18,8 +26,9 @@ final GoRouter routerConfig = GoRouter(
     GoRoute(
       path: '/scheme-details',
       builder: (context, state) {
-        // final extras = state.extra;
-        return SchemeDetailsScreen();
+        final extras = state.extra as Map<String, dynamic>;
+        var mf = extras['mf'] as MutualFund;
+        return SchemeDetailsScreen(mf: mf);
       },
     ),
   ],

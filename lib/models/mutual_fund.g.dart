@@ -9,8 +9,8 @@ part of 'mutual_fund.dart';
 MutualFund _$MutualFundFromJson(Map<String, dynamic> json) => MutualFund(
   schemeCode: (json['schemeCode'] as num?)?.toInt(),
   schemeName: json['schemeName'] as String?,
-  isInGrowth: json['isinGrowth'] as bool?,
-  isInDivReinvestment: json['isinDivReinvestment'] as bool?,
+  isInGrowth: json['isinGrowth'] as String?,
+  isInDivReinvestment: json['isinDivReinvestment'] as String?,
 );
 
 Map<String, dynamic> _$MutualFundToJson(MutualFund instance) =>

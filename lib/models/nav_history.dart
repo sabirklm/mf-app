@@ -3,19 +3,19 @@ import 'package:json_annotation/json_annotation.dart';
 part 'nav_history.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class NavHistory {
+class MutualFundNavHistory {
   final Meta? meta;
   final List<NavData>? data;
 
-  NavHistory({
+  MutualFundNavHistory({
     this.meta,
     this.data,
   });
 
-  factory NavHistory.fromJson(Map<String, dynamic> json) =>
-      _$NavHistoryFromJson(json);
+  factory MutualFundNavHistory.fromJson(Map<String, dynamic> json) =>
+      _$MutualFundNavHistoryFromJson(json);
 
-  Map<String, dynamic> toJson() => _$NavHistoryToJson(this);
+  Map<String, dynamic> toJson() => _$MutualFundNavHistoryToJson(this);
 }
 
 @JsonSerializable()

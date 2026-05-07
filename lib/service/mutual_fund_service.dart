@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:mf_ip/models/mutual_fund.dart';
+import 'package:mf_ip/models/nav_history.dart';
 
 import '../models/custom_error.dart';
 import 'endpoints.dart';
@@ -28,9 +29,9 @@ class MutualFundService {
     }
   }
 
-  Future<List<dynamic>> getNavHistory(String id) async {
+  Future<MutualFundNavHistory> getNavHistory(String id) async {
     try {
-      final response = await http.get(Uri.parse("$getNavHistory$id"));
+      final response = await http.get(Uri.parse("$navHistory/$id"));
 
       if (response.statusCode != 200) {
         throw CustomException(
@@ -39,8 +40,9 @@ class MutualFundService {
           logs: response.body,
         );
       }
-
-      return jsonDecode(response.body);
+      var json = jsonDecode(response.body);
+      var data = MutualFundNavHistory.fromJson(json);
+      return data;
     } catch (e) {
       rethrow;
     }
