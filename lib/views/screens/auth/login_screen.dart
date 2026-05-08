@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mf_ip/bloc/auth_bloc.dart';
+import 'package:mf_ip/utils/extensions.dart';
 import 'package:mf_ip/views/widgets/custom_button.dart';
 
 import '../../widgets/custom_snackbar.dart';
@@ -79,6 +80,14 @@ class _LoginScreenState extends State<LoginScreen> {
                               .toLowerCase();
                           var password = _passwordController.text;
                           if (_emailController.text.trim().isEmpty) {
+                            CustomSnackBar.show(
+                              context,
+                              message: "Please enter a valid email!",
+                            );
+                            return;
+                          }
+
+                          if (!_emailController.text.trim().isEmail) {
                             CustomSnackBar.show(
                               context,
                               message: "Please enter a valid email!",
