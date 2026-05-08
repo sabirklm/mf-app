@@ -1,16 +1,43 @@
-# mf_ip
+# MF App
 
-A new Flutter project.
+## How to run the project locally
 
-## Getting Started
+Make sure Flutter 3.32.1 is installed and configured properly.
 
-This project is a starting point for a Flutter application.
+Check your Flutter setup:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter doctor
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Clone the repository:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/sabirklm/mf-app.git
+```
+
+Go to the project directory:
+
+```bash
+cd mf-app
+```
+
+Install dependencies:
+
+```bash
+flutter pub get
+```
+
+Run the app:
+
+```bash
+flutter run
+```
+
+Make sure an emulator is running or a physical device is connected before starting the app.
+
+## Environment Used
+
+- Flutter 3.32.1
+- Android SDK 36
+- Xcode 26.3
