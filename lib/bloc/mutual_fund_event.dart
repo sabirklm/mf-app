@@ -14,3 +14,10 @@ final class RefreshMutualFund extends MutualFundEvent {
 
   const RefreshMutualFund({required this.schemeCode});
 }
+
+final class SearchMutualFunds extends MutualFundEvent {
+  final String userInput;
+
+  const SearchMutualFunds({required this.userInput}); 
+  
+}

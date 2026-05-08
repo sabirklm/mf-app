@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mf_ip/bloc/auth_bloc.dart';
+import 'package:mf_ip/bloc/investment_bloc.dart';
 import 'package:mf_ip/bloc/mutual_fund_bloc.dart';
 import '/routes/app_routes.dart';
 import 'bloc/mutual_fund_history_bloc.dart';
@@ -12,8 +14,9 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => MutualFundBloc()),
-        //MutualFundHistoryBloc
         BlocProvider(create: (_) => MutualFundHistoryBloc()),
+        BlocProvider(create: (_) => AuthBloc()..add(CheckAuthStatus())),
+        BlocProvider(create: (_) => InvestmentBloc()),
       ],
       child: MaterialApp.router(
         title: 'Flutter Demo',
