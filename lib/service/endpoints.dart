@@ -1,4 +1,4 @@
-const baseAPI = "https://api.mfapi.in";
+const baseAPI = "<replace the end point here>";
 
 const getMf = "$baseAPI/mf";
 
